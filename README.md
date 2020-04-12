@@ -12,11 +12,11 @@ Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learni
 |DeML | 65.4 | 75.3 | 83.7 | 89.5 |
 |MS | 65.7| 77.0| 86.3| 91.2|
 |Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
-|Our DBML-BN-Inception| **69.5** |**79.4** |**87.0** |**92.4** |
+|**Our DBML-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
 |Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
 |MIC+Margin| 66.1| 76.8| 85.6| -|
 |TML| 62.5| 73.9| 83.0| 89.4|
-|Our DBML-ResNet50|**69.9** |**80.4** |**87.2**|**92.5** |
+|**Our DBML-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
 
 
 ### Prepare the data and the pretrained model 
