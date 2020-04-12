@@ -1,4 +1,4 @@
-# Deep Bayesian Metric Learning (DBML-Loss)
+# Deep Bayesian Metric Learning (DBML)
 
 Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learning](.)
 
