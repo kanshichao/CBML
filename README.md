@@ -1,4 +1,4 @@
-# Deep Bayesian Metric Learning (DBML)
+# Deep Bayesian Metric Learning (DBML-Loss)
 
 Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learning](.)
 
@@ -28,7 +28,7 @@ The following script will prepare the [CUB](http://www.vision.caltech.edu.s3-us-
 ```
 
 Download the imagenet pretrained model of 
-[bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and put it in the folder:  ~/.torch/models/.
+[bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and [resnet50](https://download.pytorch.org/models/resnet50-19c8e357.pth), and put them in the folder:  ~/.torch/models/.
 
 
 ### Installation
@@ -44,6 +44,8 @@ sudo python3 setup.py develop build
 ```
 Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
 
+Best recall@1 higher than 69 (69.5 in the paper).
+
 ###  Train and Test on CUB-200-2011 with DBML-Loss based on ResNet50 backbone
 
 ```bash
@@ -51,7 +53,7 @@ Trained models will be saved in the ./output-bninception-cub/ folder if using th
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-Best recall@1 higher than 69 (69.5 in the paper).
+Best recall@1 higher than 69 (69.9 in the paper).
 
 ### Citation
 
