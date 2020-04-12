@@ -1,2 +1,66 @@
-# dbml
-Deep Bayesian Metric Learning 
+# Deep Bayesian Metric Learning (DBML)
+
+Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learning](.)
+
+### Performance compared with SOTA methods on CUB-200-2011
+
+|Rank@K | 1 | 2 | 4 | 8 |
+ |:---  |:-:|:-:|:-:|:-:|
+|Ranked List (H) | 57.4 | 69.7 | 79.2 | 86.9 |
+|Ranked List (L,M,H) | 61.3 | 72.7 | 82.7 | 89.4 |
+|SoftTriple | 65.4 | 76.4 | 84.5 | 90.4 |
+|DeML | 65.4 | 75.3 | 83.7 | 89.5 |
+|MS | 65.7| 77.0| 86.3| 91.2|
+|Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
+|Our DBML-BN-Inception| **69.5** |**79.4** |**87.0** |**92.4** |
+|Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
+|MIC+Margin| 66.1| 76.8| 85.6| -|
+|TML| 62.5| 73.9| 83.0| 89.4|
+|Our DBML-ResNet50|**69.9** |**80.4** |**87.2**|**92.5** |
+
+
+### Prepare the data and the pretrained model 
+
+The following script will prepare the [CUB](http://www.vision.caltech.edu.s3-us-west-2.amazonaws.com/visipedia-data/CUB-200-2011/CUB_200_2011.tgz) dataset for training by downloading to the ./resource/datasets/ folder; which will then build the data list (train.txt test.txt):
+
+```bash
+./scripts/prepare_cub.sh
+```
+
+Download the imagenet pretrained model of 
+[bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and put it in the folder:  ~/.torch/models/.
+
+
+### Installation
+
+```bash
+sudo pip3 install -r requirements.txt
+sudo python3 setup.py develop build
+```
+###  Train and Test on CUB-200-2011 with DBML-Loss based on BN-Inception backbone
+
+```bash
+./scripts/run_cub_bninception.sh
+```
+Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
+
+###  Train and Test on CUB-200-2011 with DBML-Loss based on ResNet50 backbone
+
+```bash
+./scripts/run_cub_resnet50.sh
+```
+Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
+
+Best recall@1 higher than 69 (69.5 in the paper).
+
+### Citation
+
+If you use this method or this code in your research, please cite as:
+
+    @inproceedings{NeurIPS2020-Anonymous,
+    title={Deep Bayesian Metric Learning},
+    author={Anonymous},
+    booktitle={},
+    pages={},
+    year={2020}
+    }
