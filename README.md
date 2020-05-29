@@ -68,5 +68,7 @@ If you use this method or this code in your research, please cite as:
     }
 
 ### Acknowledgments
-This code is written based on the framework of [MS](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of MS to release their code. If you have any questions, please contact me by: kanshichao10281078@126.com.
+This code is written based on the framework of [MS](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of MS to release their code. If you have any questions, please contact [Shichao Kan](kanshichao.github.io) by: kanshichao10281078@126.com.
 
+### Recomemended Papers About Metric Learning
+* Michael Opitz, Georg Waltner, Horst Possegger, Horst Bischof: [Deep Metric Learning with BIER: Boosting Independent Embeddings Robustly.](https://arxiv.org/abs/1801.04815) IEEE Trans. Pattern Anal. Mach. Intell. 42(2): 276-290 (2020)
