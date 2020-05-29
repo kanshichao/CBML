@@ -4,7 +4,7 @@ import torch
 
 from dbml_benchmark.config import cfg
 from dbml_benchmark.data import build_data
-from dbml_benchmark.engine.trainer import do_train
+from dbml_benchmark.engine.trainer import do_train, do_test
 from dbml_benchmark.losses import build_loss
 from dbml_benchmark.modeling import build_model
 from dbml_benchmark.solver import build_lr_scheduler, build_optimizer
@@ -51,6 +51,21 @@ def train(cfg):
         logger
     )
 
+def test(cfg):
+    logger = setup_logger(name='Train', level=cfg.LOGGER.LEVEL)
+    logger.info(cfg)
+    model = build_model(cfg)
+    device = torch.device(cfg.MODEL.DEVICE)
+    model.to(device)
+    val_loader = build_data(cfg, is_train=False)
+    logger.info(val_loader.dataset)
+
+    do_test(
+        model,
+        val_loader,
+        logger
+    )
+
 
 def parse_args():
     """
@@ -63,10 +78,19 @@ def parse_args():
         help='config file',
         default=None,
         type=str)
+    parser.add_argument(
+        '--phase',
+        dest='train_test',
+        help='train or test',
+        default='train',
+        type=str)
     return parser.parse_args()
 
 
 if __name__ == '__main__':
     args = parse_args()
     cfg.merge_from_file(args.cfg_file)
-    train(cfg)
+    if args.train_test == 'train':
+        train(cfg)
+    else:
+        test(cfg)

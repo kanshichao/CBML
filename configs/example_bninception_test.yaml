@@ -1,14 +1,9 @@
 MODEL:
   BACKBONE:
-    NAME: resnet50
-  PRETRAIN: imagenet
+    NAME: bninception
+  PRETRAIN: output-bninception-cub/model_003000.pth
 
-SAVE_DIR: output-resnet50-cub
-
-INPUT:
-   MODE: 'RGB'
-   PIXEL_MEAN: [0.485, 0.456, 0.406]
-   PIXEL_STD: [0.229, 0.224, 0.225]
+SAVE_DIR: output-bninception-cub
 
 SOLVER:
   MAX_ITERS: 3000
@@ -24,12 +19,12 @@ LOSSES:
     POS_B: 0.5
     NEG_A: 1.0
     NEG_B: 0.01
-    MARGIN: 0.2
-  
+    MARGIN: 0.1
+
 DATA:
   TRAIN_IMG_SOURCE: resource/datasets/CUB_200_2011/train.txt
   TEST_IMG_SOURCE: resource/datasets/CUB_200_2011/test.txt
-  TRAIN_BATCHSIZE: 60
+  TRAIN_BATCHSIZE: 200
   TEST_BATCHSIZE: 128
   NUM_WORKERS: 8
   NUM_INSTANCES: 5

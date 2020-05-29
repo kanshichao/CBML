@@ -1,6 +1,7 @@
 MODEL:
   BACKBONE:
     NAME: googlenet
+  PRETRAIN: imagenet
 
 SAVE_DIR: output-googlenet-cub
 
@@ -23,7 +24,7 @@ LOSSES:
     POS_B: 0.5
     NEG_A: 1.0
     NEG_B: 0.01
-    MARGIN: 0.2
+    MARGIN: 0.1
 
 DATA:
   TRAIN_IMG_SOURCE: resource/datasets/CUB_200_2011/train.txt

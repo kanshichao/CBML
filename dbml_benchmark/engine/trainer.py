@@ -117,3 +117,25 @@ def do_train(
     )
 
     logger.info(f"Best iteration: {best_iteration :06d} | best recall {best_recall} ")
+
+def do_test(
+        model,
+        val_loader,
+        logger
+):
+    logger.info("Start testing")
+    model.eval()
+    logger.info('test')
+
+    labels = val_loader.dataset.label_list
+    labels = np.array([int(k) for k in labels])
+    feats = feat_extractor(model, val_loader, logger=logger)
+
+    ret_metric = RetMetric(feats=feats, labels=labels)
+    recall_curr = []
+    recall_curr.append(ret_metric.recall_k(1))
+    recall_curr.append(ret_metric.recall_k(2))
+    recall_curr.append(ret_metric.recall_k(4))
+    recall_curr.append(ret_metric.recall_k(8))
+
+    print(recall_curr)

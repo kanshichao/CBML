@@ -6,3 +6,5 @@ if [[ ! -d "${OUT_DIR}" ]]; then
     mkdir ${OUT_DIR}
 fi
 CUDA_VISIBLE_DEVICES=0 python3.6 tools/main.py --cfg configs/example_googlenet.yaml
+
+CUDA_VISIBLE_DEVICES=0 python3.6 tools/main.py --cfg configs/example_googlenet_test.yaml --phase test
