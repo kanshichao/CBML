@@ -13,7 +13,7 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
 |DeML | 65.4 | 75.3 | 83.7 | 89.5 |
 |MS | 65.7| 77.0| 86.3| 91.2|
 |Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
-|**Our DBML-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
+|**Ours DBML-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
 
 * ResNet50 Backbone
 
@@ -22,7 +22,7 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
 |Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
 |MIC+Margin| 66.1| 76.8| 85.6| -|
 |TML| 62.5| 73.9| 83.0| 89.4|
-|**Our DBML-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
+|**Ours DBML-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
 
 ### Performance compared with SOTA methods on CUB-200-2011 for 64 dimensional embeddings
 * ResNet50 Backbone
@@ -33,7 +33,26 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
  |ProxyNCA| 55.5 | 67.7 | 78.2 | 86.2 |
  |EPSHN| 57.3| 68.9| 79.3| 87.2|
  |MS| 57.4| 69.8| 80.0| 87.8|
- |***Our DBML-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
+ |***Ours DBML-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
+ 
+ * GoogleNet Backbone
+ 
+ |Recall@K | 1 | 2 | 4 | 8 |
+ |:---  |:-:|:-:|:-:|:-:|
+ |Triplet|42.6|55.0|66.4|77.2|
+ |N-Pair|45.4|58.4|69.5|79.5|
+ |ProxyNCA|49.2|61.9|67.9|72.4|
+ |EPSHN|51.7|64.1|75.3|83.9|
+ |***Ours DBML-GoogleNet***|**59.3**|**70.7**|**80.6**|**88.1**|
+ 
+ * ResNet18 Backbone
+ 
+ |Recall@K | 1 | 2 | 4 | 8 |
+ |:---  |:-:|:-:|:-:|:-:|
+ |N-Pair|52.4|65.7|76.8|84.6|
+ |ProxyNCA|51.5|63.8|74.6|84.0|
+ |EPSHN|54.2|66.6|77.4|86.0|
+ |***Ours DBML-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
 
 ### Prepare the data and the pretrained model 
 
