@@ -5,7 +5,7 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
 ### Performance compared with SOTA methods on CUB-200-2011 for 512 dimensional embeddings
 * BN-Inception Backbone
 |Recall@K | 1 | 2 | 4 | 8 |
-|:---  |:-:|:-:|:-:|:-:|
+ |:---  |:-:|:-:|:-:|:-:|
 |Ranked List (H) | 57.4 | 69.7 | 79.2 | 86.9 |
 |Ranked List (L,M,H) | 61.3 | 72.7 | 82.7 | 89.4 |
 |SoftTriple | 65.4 | 76.4 | 84.5 | 90.4 |
@@ -13,9 +13,10 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
 |MS | 65.7| 77.0| 86.3| 91.2|
 |Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
 |**Our DBML-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
+
 * ResNet50 Backbone
 |Recall@K | 1 | 2 | 4 | 8 |
-|:---  |:-:|:-:|:-:|:-:|
+ |:---  |:-:|:-:|:-:|:-:|
 |Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
 |MIC+Margin| 66.1| 76.8| 85.6| -|
 |TML| 62.5| 73.9| 83.0| 89.4|
