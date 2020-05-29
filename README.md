@@ -59,7 +59,7 @@ Best recall@1 higher than 69 (69.9 in the paper).
 
 If you use this method or this code in your research, please cite as:
 
-    @inproceedings{NeurIPS2020-Anonymous,
+    @inproceedings{TPAMI-Shichao-2020,
     title={Deep Bayesian Metric Learning with Similarity Distribution Constraints},
     author={Shichao Kan, Yigang Cen, Yang Li, Zhihai He},
     booktitle={},
