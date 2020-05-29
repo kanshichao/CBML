@@ -25,9 +25,15 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
 |**Our DBML-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
 
 ### Performance compared with SOTA methods on CUB-200-2011 for 64 dimensional embeddings
+* ResNet50 Backbone
+
 |Recall@K | 1 | 2 | 4 | 8 |
  |:---  |:-:|:-:|:-:|:-:|
  |N-Pair| 53.2 | 65.3| 76.0 | 84.8|
+ |ProxyNCA| 55.5 | 67.7 | 78.2 | 86.2 |
+ |EPSHN| 57.3| 68.9| 79.3| 87.2|
+ |MS| 57.4| 69.8| 80.0| 87.8|
+ |***Our DBML-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
 
 ### Prepare the data and the pretrained model 
 
