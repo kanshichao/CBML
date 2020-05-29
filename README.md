@@ -1,6 +1,6 @@
 # Deep Bayesian Metric Learning (DBML)
 
-Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learning](.)
+Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.)
 
 ### Performance compared with SOTA methods on CUB-200-2011
 
@@ -60,8 +60,8 @@ Best recall@1 higher than 69 (69.9 in the paper).
 If you use this method or this code in your research, please cite as:
 
     @inproceedings{NeurIPS2020-Anonymous,
-    title={Deep Bayesian Metric Learning},
-    author={Anonymous},
+    title={Deep Bayesian Metric Learning with Similarity Distribution Constraints},
+    author={Shichao Kan, Yigang Cen, Yang Li, Zhihai He},
     booktitle={},
     pages={},
     year={2020}
