@@ -96,6 +96,15 @@ Trained models will be saved in the ./output-resnet50-cub/ folder if using the d
 
 Best recall@1 higher than 69.5 (69.9 in the paper).
 
+###  Train and Test on CUB-200-2011 with DBML-Loss based on GoogleNet backbone
+
+```bash
+./scripts/run_cub_googlenet.sh
+```
+Trained models will be saved in the ./output-googlenet-cub/ folder if using the default config.
+
+Best recall@1 higher than 64.0 (63.8 in the paper).
+
 ### Citation
 
 If you use this method or this code in your research, please cite as:
