@@ -53,7 +53,7 @@ Best recall@1 higher than 69 (69.5 in the paper).
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-Best recall@1 higher than 69 (69.9 in the paper).
+Best recall@1 higher than 69.5 (69.9 in the paper).
 
 ### Citation
 
