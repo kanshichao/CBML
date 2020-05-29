@@ -1,6 +1,6 @@
 # Deep Bayesian Metric Learning (DBML)
 
-Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.)
+This code is mainly for reproducing the results reported the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.). **Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and unsupervised transfer metric learning research. Mainly integrating various loss functions and backbones to facilitate academic reseach progress.**
 <img src="img/distribution.png" width="100%" height="65%"> 
 
 <img src="img/constrain.png" width="100%" height="65%"> 
