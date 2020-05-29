@@ -1,7 +1,7 @@
 MODEL:
   BACKBONE:
     NAME: resnet50
-  PRETRAIN: output-resnet50-cub/model_003000.pth
+  PRETRAIN: output-resnet50-cub/model_005000.pth
 
 SAVE_DIR: output-resnet50-cub
 
