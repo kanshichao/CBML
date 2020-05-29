@@ -2,6 +2,9 @@
 
 Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.)
 
+### Abstract
+Recent methods for deep metric learning has been focusing on designing different constrastive loss functions between positive and negative pairs of samples so that the learned feature embedding is able to pull positive samples of the same class closer and push negative samples from different classes away from each other. Instead of exploring different heuristic loss functions, in this work, we propose to develop a better theoretical understanding of the metric learning process based on Bayesian analysis of probability distributions of positive and negative samples. This results in a new systematic loss function to guide the learning of the feature embedding network. Our extensive experimental results and ablation studies on benchmark datasets demonstrate that our new method is able to significantly improve the deep metric learning performance.
+
 ### Performance compared with SOTA methods on CUB-200-2011 for 512 dimensional embeddings
 * BN-Inception Backbone
 
@@ -35,6 +38,15 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
  |MS| 57.4| 69.8| 80.0| 87.8|
  |***Ours DBML-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
  
+ * ResNet18 Backbone
+ 
+ |Recall@K | 1 | 2 | 4 | 8 |
+ |:---  |:-:|:-:|:-:|:-:|
+ |N-Pair|52.4|65.7|76.8|84.6|
+ |ProxyNCA|51.5|63.8|74.6|84.0|
+ |EPSHN|54.2|66.6|77.4|86.0|
+ |***Ours DBML-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
+ 
  * GoogleNet Backbone
  
  |Recall@K | 1 | 2 | 4 | 8 |
@@ -44,15 +56,6 @@ Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarit
  |ProxyNCA|49.2|61.9|67.9|72.4|
  |EPSHN|51.7|64.1|75.3|83.9|
  |***Ours DBML-GoogleNet***|**59.3**|**70.7**|**80.6**|**88.1**|
- 
- * ResNet18 Backbone
- 
- |Recall@K | 1 | 2 | 4 | 8 |
- |:---  |:-:|:-:|:-:|:-:|
- |N-Pair|52.4|65.7|76.8|84.6|
- |ProxyNCA|51.5|63.8|74.6|84.0|
- |EPSHN|54.2|66.6|77.4|86.0|
- |***Ours DBML-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
 
 ### Prepare the data and the pretrained model 
 
