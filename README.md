@@ -1,6 +1,9 @@
 # Deep Bayesian Metric Learning (DBML)
 
 Code for the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.)
+<img src="img/distribution.png" width="65%" height="65%"> 
+
+<img src="img/contrastive.png" width="65%" height="65%"> 
 
 ### Abstract
 Recent methods for deep metric learning has been focusing on designing different constrastive loss functions between positive and negative pairs of samples so that the learned feature embedding is able to pull positive samples of the same class closer and push negative samples from different classes away from each other. Instead of exploring different heuristic loss functions, in this work, we propose to develop a better theoretical understanding of the metric learning process based on Bayesian analysis of probability distributions of positive and negative samples. This results in a new systematic loss function to guide the learning of the feature embedding network. Our extensive experimental results and ablation studies on benchmark datasets demonstrate that our new method is able to significantly improve the deep metric learning performance.
