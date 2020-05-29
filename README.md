@@ -84,7 +84,7 @@ If you use this method or this code in your research, please cite as:
     }
 
 ### Acknowledgments
-This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use.
+This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. In this work, [Shichao Kan](https://kanshichao.github.io) proposed the method and written the code and conducted experiments, Zhihai He provided the experimental environment, manuscript writing, method discussion and strengthen, Yigang Cen is the advisor of Shichao Kan and help to proof reading, Yang Li also help to proof reading.
 
 ### License
 This code is released for academic research / non-commercial use only. If you wish to use for commercial purposes, please contact [Shichao Kan](https://kanshichao.github.io) by email kanshichao10281078@126.com.
