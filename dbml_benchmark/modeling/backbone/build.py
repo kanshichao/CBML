@@ -2,6 +2,7 @@ from dbml_benchmark.modeling.registry import BACKBONES
 
 from .bninception import BNInception
 from .resnet import ResNet50
+from .googlenet import GoogLeNet
 
 
 def build_backbone(cfg):
