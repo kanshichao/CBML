@@ -1,6 +1,6 @@
 # Deep Bayesian Metric Learning (DBML)
 
-Code for the paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.)
+Code for the Anonymous NeurIPS 2020 submitted paper [Deep Bayesian Metric Learning](.)
 
 ### Performance compared with SOTA methods on CUB-200-2011
 
@@ -28,7 +28,7 @@ The following script will prepare the [CUB](http://www.vision.caltech.edu.s3-us-
 ```
 
 Download the imagenet pretrained model of 
-[bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and [resnet50](https://download.pytorch.org/models/resnet50-19c8e357.pth), and put them in the folder:  ~/.torch/models/.
+[bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and [resnet50](https://download.pytorch.org/models/resnet50-19c8e357.pth), and put them in the folder:  ~/.cache/torch/checkpoints/.
 
 
 ### Installation
@@ -59,9 +59,9 @@ Best recall@1 higher than 69 (69.9 in the paper).
 
 If you use this method or this code in your research, please cite as:
 
-    @inproceedings{
+    @inproceedings{NeurIPS2020-Anonymous,
     title={Deep Bayesian Metric Learning},
-    author={Shichao Kan,Yigang Cen,Yang Li,Zhihai He},
+    author={Anonymous},
     booktitle={},
     pages={},
     year={2020}
