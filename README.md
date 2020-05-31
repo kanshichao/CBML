@@ -1,6 +1,7 @@
 # Deep Bayesian Metric Learning (DBML)
 
-This code is mainly for reproducing the results reported the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.). **Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and unsupervised transfer metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning.**
+This code is mainly for reproducing the results reported the TPAMI submitted paper [Deep Bayesian Metric Learning with Similarity Distribution Constraints](.). **Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and unsupervised transfer metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning.** **Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and dbml_loss, [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf).**
+
 <img src="img/distribution.png" width="100%" height="65%"> 
 
 <img src="img/constrain.png" width="100%" height="65%"> 
@@ -68,7 +69,7 @@ The following script will prepare the [CUB](http://www.vision.caltech.edu.s3-us-
 ./scripts/prepare_cub.sh
 ```
 
-**Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and dbml_loss, [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf).** To reproduce the results of our paper. Download the imagenet pretrained model of 
+To reproduce the results of our paper. Download the imagenet pretrained model of 
 [googlenet](https://download.pytorch.org/models/googlenet-1378be20.pth), [bninception](http://data.lip6.fr/cadene/pretrainedmodels/bn_inception-52deb4733.pth) and [resnet50](https://download.pytorch.org/models/resnet50-19c8e357.pth), and put them in the folder:  ~/.cache/torch/checkpoints/.
 
 
