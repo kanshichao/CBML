@@ -28,7 +28,7 @@ _C.SAVE_DIR = 'output'
 
 # loss
 _C.LOSSES = CN()
-_C.LOSSES.NAME = 'rank_loss'
+_C.LOSSES.NAME = 'dbml_loss'
 
 # dbml_loss
 _C.LOSSES.DBML_LOSS = CN()
