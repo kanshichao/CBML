@@ -1,5 +1,10 @@
 
 from .dbml import DBMLLoss
+from .crossentropy_loss import CrossEntropyLoss
+from .margin_loss import MarginLoss
+from .multi_similarity_loss import MultiSimilarityLoss
+from .ranked_list_loss import RankedListLoss
+from .soft_triplet_loss import SoftTriple
 from .registry import LOSS
 
 
