@@ -30,7 +30,7 @@ _C.SAVE_DIR = 'output'
 _C.LOSSES = CN()
 _C.LOSSES.NAME = 'dbml_loss'
 
-# DBML loss
+# dbml_loss
 _C.LOSSES.DBML_LOSS = CN()
 _C.LOSSES.DBML_LOSS.POS_A = 0.5
 _C.LOSSES.DBML_LOSS.POS_B = 0.5
