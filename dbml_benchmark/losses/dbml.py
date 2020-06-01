@@ -15,6 +15,7 @@ class DBMLLoss(nn.Module):
         self.margin = cfg.LOSSES.DBML_LOSS.MARGIN
         self.weight = cfg.LOSSES.DBML_LOSS.WEIGHT
         self.adaptive_neg = cfg.LOSSES.DBML_LOSS.ADAPTIVE_NEG
+        self.type = cfg.LOSSES.DBML_LOSS.TYPE
 
     def forward(self, feats, labels):
         assert feats.size(0) == labels.size(0), \
@@ -36,10 +37,10 @@ class DBMLLoss(nn.Module):
             mean_ = torch.mean(sim_mat[i])
             sigma_ = torch.mean(torch.sum(torch.pow(sim_mat[i]-mean_,2)))
 
-            pp = pos_pair_ - self.margin < max(neg_pair_)
+            pp = pos_pair_ - self.margin < torch.max(neg_pair_)
             pos_pair = pos_pair_[pp]
             if self.adaptive_neg:
-                np = neg_pair_ + self.margin > min(pos_pair_)
+                np = neg_pair_ + self.margin > torch.min(pos_pair_)
                 neg_pair = neg_pair_[np]
             else:
                 np = torch.argsort(neg_pair_)
@@ -51,10 +52,18 @@ class DBMLLoss(nn.Module):
             mean = (torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair))
             sigma = (torch.sum(torch.pow(pos_pair-mean,2))+torch.sum(torch.pow(neg_pair-mean,2)))/(len(pos_pair) + len(neg_pair))
 
-            fp = 1. + torch.sum(torch.exp(-1./self.pos_b * (pos_pair - self.pos_a)))
-            fn = 1. + torch.sum(torch.exp( 1./self.neg_b * (neg_pair - self.neg_a)))
-            pos_loss = torch.log(fp)
-            neg_loss = torch.log(fn)
+            if self.type == 'log' or self.type == 'sqrt':
+                fp = 1. + torch.sum(torch.exp(-1./self.pos_b * (pos_pair - self.pos_a)))
+                fn = 1. + torch.sum(torch.exp( 1./self.neg_b * (neg_pair - self.neg_a)))
+                if self.type == 'log':
+                    pos_loss = torch.log(fp)
+                    neg_loss = torch.log(fn)
+                else:
+                    pos_loss = torch.sqrt(fp)
+                    neg_loss = torch.sqrt(fn)
+            else:
+                pos_loss = 1. + torch.mean(torch.exp(-1. / self.pos_b * (pos_pair - self.pos_a)))
+                neg_loss = 1. + torch.mean(torch.exp(1. / self.neg_b * (neg_pair - self.neg_a)))
             pos_neg_loss = torch.abs(mean_-mean) + torch.abs(sigma_-sigma)
             loss.append((pos_loss + neg_loss + self.weight*pos_neg_loss))
 
