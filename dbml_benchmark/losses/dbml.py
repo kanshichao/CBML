@@ -16,6 +16,8 @@ class DBMLLoss(nn.Module):
         self.weight = cfg.LOSSES.DBML_LOSS.WEIGHT
         self.adaptive_neg = cfg.LOSSES.DBML_LOSS.ADAPTIVE_NEG
         self.type = cfg.LOSSES.DBML_LOSS.TYPE
+        self.loss_weight_p = cfg.LOSSES.DBML_LOSS.WEIGHT_P
+        self.loss_weight_n = cfg.LOSSES.DBML_LOSS.WEIGHT_N
 
     def forward(self, feats, labels):
         assert feats.size(0) == labels.size(0), \
@@ -62,8 +64,8 @@ class DBMLLoss(nn.Module):
                     pos_loss = torch.sqrt(fp)
                     neg_loss = torch.sqrt(fn)
             else:
-                pos_loss = 1. + torch.mean(torch.exp(-1. / self.pos_b * (pos_pair - self.pos_a)))
-                neg_loss = 1. + torch.mean(torch.exp(1. / self.neg_b * (neg_pair - self.neg_a)))
+                pos_loss = 1. + self.loss_weight_p*torch.sum(torch.exp(-1. / self.pos_b * (pos_pair - self.pos_a)))
+                neg_loss = 1. + self.loss_weight_n*torch.sum(torch.exp(1. / self.neg_b * (neg_pair - self.neg_a)))
             pos_neg_loss = torch.abs(mean_-mean) + torch.abs(sigma_-sigma)
             loss.append((pos_loss + neg_loss + self.weight*pos_neg_loss))
 
