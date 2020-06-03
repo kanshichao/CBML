@@ -21,7 +21,11 @@ def train(cfg):
 
     criterion = build_loss(cfg)
 
-    optimizer = build_optimizer(cfg, model)
+    loss_param = None
+    if cfg.LOSSES.NAME == 'softtriple_loss':
+        loss_param = criterion
+
+    optimizer = build_optimizer(cfg, model,loss_param=loss_param)
     scheduler = build_lr_scheduler(cfg, optimizer)
 
     train_loader = build_data(cfg, is_train=True)
