@@ -20,6 +20,8 @@ Recent methods for deep metric learning has been focusing on designing different
 |DeML | 65.4 | 75.3 | 83.7 | 89.5 |
 |MS | 65.7| 77.0| 86.3| 91.2|
 |Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
+|**Ours DBML-const-BN-Inception**| **68.3** |**78.5** |**86.9** |**92.1** |
+|**Ours DBML-sqrt-BN-Inception**| **69.5** |**79.5** |**86.7** |**91.8** |
 |**Ours DBML-log-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
 
 * ResNet50 Backbone
@@ -29,6 +31,8 @@ Recent methods for deep metric learning has been focusing on designing different
 |Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
 |MIC+Margin| 66.1| 76.8| 85.6| -|
 |TML| 62.5| 73.9| 83.0| 89.4|
+|**Ours DBML-const-ResNet50**|**69.2** |**79.3** |**86.3**|**91.6** |
+|**Ours DBML-sqrt-ResNet50**|**70.0** |**79.9** |**87.0**|**92.0** |
 |**Ours DBML-log-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
 
 ### Performance compared with SOTA methods on CUB-200-2011 for 64 dimensional embeddings
