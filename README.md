@@ -44,6 +44,8 @@ Recent methods for deep metric learning has been focusing on designing different
  |ProxyNCA| 55.5 | 67.7 | 78.2 | 86.2 |
  |EPSHN| 57.3| 68.9| 79.3| 87.2|
  |MS| 57.4| 69.8| 80.0| 87.8|
+ |***Ours DBML-const-ResNet50***|**65.0**|**76.2**|**84.9**|**90.6**|
+ |***Ours DBML-sqrt-ResNet50***|**65.0**|**76.0**|**84.1**|**90.3**|
  |***Ours DBML-log-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
  
  * ResNet18 Backbone
@@ -53,6 +55,8 @@ Recent methods for deep metric learning has been focusing on designing different
  |N-Pair|52.4|65.7|76.8|84.6|
  |ProxyNCA|51.5|63.8|74.6|84.0|
  |EPSHN|54.2|66.6|77.4|86.0|
+ |***Ours DBML-const-ResNet18***|**58.0**|**69.6**|**80.0**|**87.5**|
+ |***Ours DBML-sqrt-ResNet18***|**59.4**|**70.5**|**80.4**|**88.0**|
  |***Ours DBML-log-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
  
  * GoogleNet Backbone
@@ -63,6 +67,8 @@ Recent methods for deep metric learning has been focusing on designing different
  |N-Pair|45.4|58.4|69.5|79.5|
  |ProxyNCA|49.2|61.9|67.9|72.4|
  |EPSHN|51.7|64.1|75.3|83.9|
+ |***Ours DBML-const-GoogleNet***|**56.8**|**69.5**|**79.5**|**87.9**|
+ |***Ours DBML-sqrt-GoogleNet***|**57.7**|**69.7**|**80.5**|**88.3**|
  |***Ours DBML-log-GoogleNet***|**59.3**|**70.7**|**80.6**|**88.1**|
 
 ### Prepare the data and the pretrained model 
