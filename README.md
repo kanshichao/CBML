@@ -142,7 +142,7 @@ Best recall@1 higher than 64.0 (63.8 in the paper).
 If you use this method or this code in your research, please cite as:
 
     @inproceedings{TPAMI-Shichao-2020,
-    title={Deep Bayesian Metric Learning with Similarity Distribution Constraints},
+    title={Deep Bayesian Metric Learning with Similarity Distribution Adversarial},
     author={Shichao Kan, Yigang Cen, Yang Li, Zhihai He},
     booktitle={},
     pages={},
