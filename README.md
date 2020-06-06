@@ -10,6 +10,27 @@ This code is mainly for reproducing the results reported in our TPAMI submitted 
 Recent methods for deep metric learning has been focusing on designing different constrastive loss functions between positive and negative pairs of samples so that the learned feature embedding is able to pull positive samples of the same class closer and push negative samples from different classes away from each other. Instead of exploring different heuristic loss functions, in this work, we propose to develop a better theoretical understanding of the metric learning process based on Bayesian analysis of probability distributions of positive and negative samples. This results in a new systematic loss function to guide the learning of the feature embedding network. Our extensive experimental results and ablation studies on benchmark datasets demonstrate that our new method is able to significantly improve the deep metric learning performance.
 
 ### Performance compared with SOTA methods on CUB-200-2011 for 512 dimensional embeddings
+* Googlenet Backbone
+
+|Recall@K | 1 | 2 | 4 | 8 |
+ |:---  |:-:|:-:|:-:|:-:|
+|Contrastive | 26.4 | 37.7 | 49.8 | 62.3 |
+|Triplet | 36.1 | 48.6 | 59.3 | 70.0 |
+|LiftedStruct | 47.2 | 58.9 | 70.2 | 80.2 |
+|Binomial Deviance | 52.8 | 64.4 | 74.7 | 83.9 |
+|Histogram Loss| 50.3| 61.9| 72.6| 82.3|
+|N-Pair-Loss | 51.0| 63.3| 74.3| 83.2|
+|Clustering |48.2 |61.4 |71.8 |81.9 |
+|Proxy NCA| 49.2| 61.9| 67.9| 72.4|
+|Smart Mining| 49.8| 62.3| 74.1| 83.3|
+|HDC| 53.6| 65.7| 77.0| 85.6|
+|Angular Loss| 54.7| 66.3| 76.0| 83.9|
+|BIER| 55.3| 67.2| 76.9| 85.1|
+|A-BIER| 57.5| 68.7| 78.3| 82.6|
+|**Ours DBML-const-BN-Inception**| **62.8** |**73.9** |**83.2** |**89.8** |
+|**Ours DBML-sqrt-BN-Inception**| **63.1** |**74.7** |**83.1** |**89.8** |
+|**Ours DBML-log-BN-Inception**| **63.8** |**74.8** |**83.6** |**90.3** |
+
 * BN-Inception Backbone
 
 |Recall@K | 1 | 2 | 4 | 8 |
