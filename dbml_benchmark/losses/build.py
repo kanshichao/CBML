@@ -5,6 +5,13 @@ from .margin_loss import MarginLoss
 from .multi_similarity_loss import MultiSimilarityLoss
 from .ranked_list_loss import RankedListLoss
 from .soft_triplet_loss import SoftTriple
+from .proxynca import ProxyNCA
+from .npair_loss import NPairLoss
+from .angular_loss import AngularLoss
+from .contrastive_loss import ContrastiveLoss, OnlineContrastiveLoss
+from .triplet_loss import TripletLoss, OnlineTripletLoss
+from .cluster_loss import ClusterLoss, ClusterLoss_local
+from .histogram_loss import HistogramLoss
 from .registry import LOSS
 
 
