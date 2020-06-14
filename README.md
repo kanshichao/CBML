@@ -143,14 +143,14 @@ If you use this method or this code in your research, please cite as:
 
     @inproceedings{TPAMI-Shichao-2020,
     title={Deep Bayesian Metric Learning with Similarity Distribution Adversarial},
-    author={Shichao Kan, Yigang Cen, Yang Li, Zhihai He},
+    author={Shichao Kan, Yigang Cen, Yang Li, Mladenovic Vladimir, Zhihai He},
     booktitle={},
     pages={},
     year={2020}
     }
 
 ### Acknowledgments
-This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. We also thank the following helpful implementtaions on [histogram](https://github.com/valerystrizh/pytorch-histogram-loss), [proxynca](https://github.com/dichotomies/proxy-nca), [n-pair and angular](https://github.com/leeesangwon/PyTorch-Image-Retrieval), [siamese-triplet](https://github.com/adambielski/siamese-triplet), [clustering](https://github.com/shaoniangu/ClusterLoss-Pytorch-ReID).  In this work, [Shichao Kan](https://kanshichao.github.io) proposed the method and wrote the code and conducted experiments, Zhihai He provided the experimental environment, wrote the manuscript, participated discussion and helped to improve the rigorous of the method. Yigang Cen is the PhD advisor of Shichao Kan, and provided part of the finical support on this work and participated the discussion and proof reading. Yang Li also participated the discussion and proof reading.
+This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. We also thank the following helpful implementtaions on [histogram](https://github.com/valerystrizh/pytorch-histogram-loss), [proxynca](https://github.com/dichotomies/proxy-nca), [n-pair and angular](https://github.com/leeesangwon/PyTorch-Image-Retrieval), [siamese-triplet](https://github.com/adambielski/siamese-triplet), [clustering](https://github.com/shaoniangu/ClusterLoss-Pytorch-ReID).  In this work, [Shichao Kan](https://kanshichao.github.io) proposed the method and wrote the code and conducted experiments, Zhihai He provided the experimental environment, wrote the manuscript, participated discussion and helped to improve the rigorous of the method. Yigang Cen is the PhD advisor of Shichao Kan, and provided part of the finical support on this work and participated the discussion and proof reading. Yang Li and Mladenovic Vladimir participated the discussion and proof reading.
 
 ### License
 This code is released for academic research / non-commercial use only. If you wish to use for commercial purposes, please contact [Shichao Kan](https://kanshichao.github.io) by email kanshichao10281078@126.com.
