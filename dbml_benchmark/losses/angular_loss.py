@@ -5,7 +5,7 @@ from dbml_benchmark.losses.registry import LOSS
 
 
 @LOSS.register('angular_loss')
-class AngularLoss(object):
+class AngularLoss(nn.Module):
     """
     Angular loss
     Wang, Jian. "Deep Metric Learning with Angular Loss," ICCV, 2017
@@ -36,6 +36,36 @@ class AngularLoss(object):
         return losses
 
     @staticmethod
+    def get_n_pairs(labels):
+        """
+        Get index of n-pairs and n-negatives
+        :param labels: label vector of mini-batch
+        :return: A tuple of n_pairs (n, 2)
+                        and n_negatives (n, n-1)
+        """
+        labels = labels.cpu().data.numpy()
+        n_pairs = []
+
+        for label in set(labels):
+            label_mask = (labels == label)
+            label_indices = np.where(label_mask)[0]
+            if len(label_indices) < 2:
+                continue
+            anchor, positive = np.random.choice(label_indices, 2, replace=False)
+            n_pairs.append([anchor, positive])
+
+        n_pairs = np.array(n_pairs)
+
+        n_negatives = []
+        for i in range(len(n_pairs)):
+            negative = np.concatenate([n_pairs[:i, 1], n_pairs[i + 1:, 1]])
+            n_negatives.append(negative)
+
+        n_negatives = np.array(n_negatives)
+
+        return torch.LongTensor(n_pairs), torch.LongTensor(n_negatives)
+    
+    @staticmethod
     def angular_loss(anchors, positives, negatives, angle_bound=1.):
         """
         Calculates angular loss
@@ -60,3 +90,13 @@ class AngularLoss(object):
         loss = torch.mean(t + x)
 
         return loss
+
+    @staticmethod
+    def l2_loss(anchors, positives):
+        """
+        Calculates L2 norm regularization loss
+        :param anchors: A torch.Tensor, (n, embedding_size)
+        :param positives: A torch.Tensor, (n, embedding_size)
+        :return: A scalar
+        """
+        return torch.sum(anchors ** 2 + positives ** 2) / anchors.shape[0]
