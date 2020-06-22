@@ -22,7 +22,7 @@ def train(cfg):
     criterion = build_loss(cfg)
 
     loss_param = None
-    if cfg.LOSSES.NAME == 'softtriple_loss':
+    if cfg.LOSSES.NAME == 'softtriple_loss' or cfg.LOSSES.NAME == 'proxynca_loss':
         loss_param = criterion
 
     optimizer = build_optimizer(cfg, model,loss_param=loss_param)
