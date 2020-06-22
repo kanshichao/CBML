@@ -100,7 +100,7 @@ class ClusterLoss(nn.Module):
         """
         assert features.size(0) == targets.size(0), "features.size(0) is not equal to targets.size(0)"
         cluster_loss, cluster_dist_ap, cluster_dist_an = self._cluster_loss(features, targets, self.ordered, self.ids_per_batch, self.imgs_per_id)
-        return cluster_loss, cluster_dist_ap, cluster_dist_an
+        return cluster_loss
 
 @LOSS.register('cluster_loss_local')
 class ClusterLoss_local(nn.Module):
@@ -247,4 +247,4 @@ class ClusterLoss_local(nn.Module):
         """
         assert features.size(0) == targets.size(0), "features.size(0) is not equal to targets.size(0)"
         cluster_loss, cluster_dist_ap, cluster_dist_an = self._cluster_loss(features, targets, self.ordered, self.ids_per_batch, self.imgs_per_id)
-        return cluster_loss, cluster_dist_ap, cluster_dist_an
+        return cluster_loss
