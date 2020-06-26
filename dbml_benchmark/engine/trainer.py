@@ -10,6 +10,10 @@ from dbml_benchmark.utils.feat_extractor import feat_extractor
 from dbml_benchmark.utils.freeze_bn import set_bn_eval
 from dbml_benchmark.utils.metric_logger import MetricLogger
 
+def update_ema_variables(model,ema_model):
+    alpha = 0.999
+    for ema_param, param in zip(ema_model.parameters(), model.parameters()):
+        ema_param.data.mul_(alpha).add_(1-alpha,param.data)
 
 def do_train(
         cfg,
@@ -75,15 +79,18 @@ def do_train(
         targets = torch.stack([target.to(device) for target in targets])
 
         feats = model(images)
-        loss = criterion(feats, targets)
         if criterion_aux is not None:
             if cfg.LOSSES.NAME_AUX is not 'adv_loss':
+                loss = criterion(feats, targets)
                 loss_aux = criterion_aux(feats, targets)
-                loss = loss + cfg.LOSSES.AUX_WEIGHT*loss_aux
+                loss = (1-cfg.LOSSES.AUX_WEIGHT)*loss + cfg.LOSSES.AUX_WEIGHT*loss_aux
             else:
                 feats=torch.split(feats,cfg.LOSSES.ADV_LOSS.CLASS_DIM,dim=1)
+                loss = criterion(feats[0], targets) + criterion(feats[1], targets)
                 loss_aux = criterion_aux(feats[0], feats[1])
-                loss = loss + cfg.LOSSES.AUX_WEIGHT * loss_aux
+                loss = (1-cfg.LOSSES.AUX_WEIGHT)*loss + cfg.LOSSES.AUX_WEIGHT * loss_aux
+        else:
+            loss = criterion(feats, targets)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
