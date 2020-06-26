@@ -5,7 +5,7 @@ import torch
 from dbml_benchmark.config import cfg
 from dbml_benchmark.data import build_data
 from dbml_benchmark.engine.trainer import do_train, do_test
-from dbml_benchmark.losses import build_loss
+from dbml_benchmark.losses import build_loss,build_aux_loss
 from dbml_benchmark.modeling import build_model
 from dbml_benchmark.solver import build_lr_scheduler, build_optimizer
 from dbml_benchmark.utils.logger import setup_logger
@@ -20,10 +20,15 @@ def train(cfg):
     model.to(device)
 
     criterion = build_loss(cfg)
+    criterion_aux = None
+    if cfg.LOSSES.NAME_AUX is not '':
+        criterion_aux = build_aux_loss(cfg)
 
     loss_param = None
-    if cfg.LOSSES.NAME == 'softtriple_loss' or cfg.LOSSES.NAME == 'proxynca_loss' or cfg.LOSSES.NAME == 'center_loss':
+    if cfg.LOSSES.NAME == 'softtriple_loss' or cfg.LOSSES.NAME == 'proxynca_loss' or cfg.LOSSES.NAME == 'center_loss' or cfg.LOSSES.NAME == 'adv_loss':
         loss_param = criterion
+    if cfg.LOSSES.NAME_AUX == 'softtriple_loss' or cfg.LOSSES.NAME_AUX == 'proxynca_loss' or cfg.LOSSES.NAME_AUX == 'center_loss' or cfg.LOSSES.NAME_AUX == 'adv_loss':
+        loss_param = criterion_aux
 
     optimizer = build_optimizer(cfg, model,loss_param=loss_param)
     scheduler = build_lr_scheduler(cfg, optimizer)
@@ -48,6 +53,7 @@ def train(cfg):
         optimizer,
         scheduler,
         criterion,
+        criterion_aux,
         checkpointer,
         device,
         checkpoint_period,

@@ -21,3 +21,9 @@ def build_loss(cfg):
     assert loss_name in LOSS, \
         f'loss name {loss_name} is not registered in registry :{LOSS.keys()}'
     return LOSS[loss_name](cfg)
+
+def build_aux_loss(cfg):
+    loss_name = cfg.LOSSES.NAME_AUX
+    assert loss_name in LOSS, \
+        f'loss name {loss_name} is not registered in registry :{LOSS.keys()}'
+    return LOSS[loss_name](cfg)

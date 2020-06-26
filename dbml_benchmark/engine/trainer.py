@@ -19,6 +19,7 @@ def do_train(
         optimizer,
         scheduler,
         criterion,
+        criterion_aux,
         checkpointer,
         device,
         checkpoint_period,
@@ -75,6 +76,13 @@ def do_train(
 
         feats = model(images)
         loss = criterion(feats, targets)
+        if criterion_aux is not None:
+            if cfg.LOSSES.NAME_AUX is not 'adv_loss':
+                loss_aux = criterion_aux(feats, targets)
+                loss = loss + cfg.LOSSES.AUX_WEIGHT*loss_aux
+            else:
+                loss_aux = criterion_aux(feats, feats)
+                loss = loss + cfg.LOSSES.AUX_WEIGHT * loss_aux
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
