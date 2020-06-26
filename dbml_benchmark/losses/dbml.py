@@ -37,6 +37,7 @@ class DBMLLoss(nn.Module):
                 continue
 
             mean_ = torch.mean(sim_mat[i])
+            # mean_ = (torch.mean(sim_mat[i]) + (torch.min(pos_pair_) + torch.max(neg_pair_)) / 2.) / 2.
             sigma_ = torch.mean(torch.sum(torch.pow(sim_mat[i]-mean_,2)))
 
             pp = pos_pair_ - self.margin < torch.max(neg_pair_)
@@ -49,9 +50,11 @@ class DBMLLoss(nn.Module):
                 neg_pair = neg_pair_[np[-100:]]
 
             if len(neg_pair) < 1 or len(pos_pair) < 1:
+                # loss.append(pos_sigma_ + neg_sigma_)
                 continue
 
             mean = (torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair))
+            # mean = ((torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair)) + (torch.min(pos_pair) + torch.max(neg_pair)) / 2.) / 2.
             sigma = (torch.sum(torch.pow(pos_pair-mean,2))+torch.sum(torch.pow(neg_pair-mean,2)))/(len(pos_pair) + len(neg_pair))
 
             if self.type == 'log' or self.type == 'sqrt':
