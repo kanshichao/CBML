@@ -81,7 +81,8 @@ def do_train(
                 loss_aux = criterion_aux(feats, targets)
                 loss = loss + cfg.LOSSES.AUX_WEIGHT*loss_aux
             else:
-                loss_aux = criterion_aux(feats, feats)
+                feats=torch.split(feats,cfg.LOSSES.ADV_LOSS.CLASS_DIM,dim=1)
+                loss_aux = criterion_aux(feats[0], feats[1])
                 loss = loss + cfg.LOSSES.AUX_WEIGHT * loss_aux
         optimizer.zero_grad()
         loss.backward()

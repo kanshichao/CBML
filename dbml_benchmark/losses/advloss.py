@@ -1,4 +1,5 @@
 import torch
+import torch.nn
 import warnings
 warnings.filterwarnings("ignore")
 

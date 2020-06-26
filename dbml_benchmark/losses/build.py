@@ -13,6 +13,7 @@ from .triplet_loss import TripletLoss, OnlineTripletLoss
 from .cluster_loss import ClusterLoss, ClusterLoss_local
 from .histogram_loss import HistogramLoss
 from .center_loss import CenterLoss
+from .advloss import AdvLoss
 from .registry import LOSS
 
 
