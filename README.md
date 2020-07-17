@@ -117,7 +117,7 @@ sudo python3 setup.py develop build
 ```
 Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
 
-Best recall@1 higher than 70 (69.5 in the paper).
+Best recall@1 higher than 70.
 
 ###  Train and Test on CUB-200-2011 with DBML-Loss based on ResNet50 backbone
 
@@ -126,7 +126,7 @@ Best recall@1 higher than 70 (69.5 in the paper).
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-Best recall@1 higher than 70.5 (69.9 in the paper).
+Best recall@1 higher than 70.5.
 
 ###  Train and Test on CUB-200-2011 with DBML-Loss based on GoogleNet backbone
 
