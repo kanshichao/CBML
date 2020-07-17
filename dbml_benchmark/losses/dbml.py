@@ -36,9 +36,10 @@ class DBMLLoss(nn.Module):
             if len(neg_pair_) < 1 or len(pos_pair_) < 1:
                 continue
 
-            mean_ = torch.mean(sim_mat[i])
-            # mean_ = (torch.mean(sim_mat[i]) + (torch.min(pos_pair_) + torch.max(neg_pair_)) / 2.) / 2.
-            sigma_ = torch.mean(torch.sum(torch.pow(sim_mat[i]-mean_,2)))
+            # mean_ = torch.mean(sim_mat[i])
+            mean_ = (torch.mean(sim_mat[i]) + (torch.min(pos_pair_) + torch.max(neg_pair_)) / 2.) / 2.
+            # sigma_ = torch.mean(torch.sum(torch.pow(sim_mat[i]-mean_,2)))
+            sigma_ = torch.mean(torch.sum(torch.pow(neg_pair_-mean_,2)))
 
             pp = pos_pair_ - self.margin < torch.max(neg_pair_)
             pos_pair = pos_pair_[pp]
@@ -53,9 +54,9 @@ class DBMLLoss(nn.Module):
                 # loss.append(pos_sigma_ + neg_sigma_)
                 continue
 
-            mean = (torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair))
+            # mean = (torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair))
             # mean = ((torch.sum(pos_pair) + torch.sum(neg_pair)) / (len(pos_pair) + len(neg_pair)) + (torch.min(pos_pair) + torch.max(neg_pair)) / 2.) / 2.
-            sigma = (torch.sum(torch.pow(pos_pair-mean,2))+torch.sum(torch.pow(neg_pair-mean,2)))/(len(pos_pair) + len(neg_pair))
+            # sigma = (torch.sum(torch.pow(pos_pair-mean,2))+torch.sum(torch.pow(neg_pair-mean,2)))/(len(pos_pair) + len(neg_pair))
 
             if self.type == 'log' or self.type == 'sqrt':
                 fp = 1. + torch.sum(torch.exp(-1./self.pos_b * (pos_pair - self.pos_a)))
@@ -69,7 +70,7 @@ class DBMLLoss(nn.Module):
             else:
                 pos_loss = 1. + self.loss_weight_p*torch.sum(torch.exp(-1. / self.pos_b * (pos_pair - self.pos_a)))
                 neg_loss = 1. + self.loss_weight_n*torch.sum(torch.exp(1. / self.neg_b * (neg_pair - self.neg_a)))
-            pos_neg_loss = torch.abs(mean_-mean) + torch.abs(sigma_-sigma)
+            pos_neg_loss = sigma_ #torch.abs(mean_-mean) + torch.abs(sigma_-sigma)
             loss.append((pos_loss + neg_loss + self.weight*pos_neg_loss))
 
         if len(loss) == 0:
