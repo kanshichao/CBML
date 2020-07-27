@@ -117,7 +117,7 @@ sudo python3 setup.py develop build
 ```
 Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
 
-Best recall@1 higher than 70.
+Best recall@1 higher than 70 (69.5 in the paper).
 
 ###  Train and Test on CUB-200-2011 with DBML-Loss based on ResNet50 backbone
 
@@ -126,7 +126,7 @@ Best recall@1 higher than 70.
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-Best recall@1 higher than 70.5.
+Best recall@1 higher than 70.5 (69.9 in the paper).
 
 ###  Train and Test on CUB-200-2011 with DBML-Loss based on GoogleNet backbone
 
@@ -150,7 +150,7 @@ If you use this method or this code in your research, please cite as:
     }
 
 ### Acknowledgments
-This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. We also thank the following helpful implementtaions on [histogram](https://github.com/valerystrizh/pytorch-histogram-loss), [proxynca](https://github.com/dichotomies/proxy-nca), [n-pair and angular](https://github.com/leeesangwon/PyTorch-Image-Retrieval), [siamese-triplet](https://github.com/adambielski/siamese-triplet), [clustering](https://github.com/shaoniangu/ClusterLoss-Pytorch-ReID).  In this work, [Shichao Kan](https://kanshichao.github.io) proposed the method and wrote the code and conducted experiments, Zhihai He provided the experimental environment, wrote the manuscript, participated discussion and helped to improve the rigorous of the method. Yigang Cen is the PhD advisor of Shichao Kan, and provided part of the finical support on this work and participated the discussion and proof reading. Yang Li and Mladenovic Vladimir participated the discussion and proof reading.
+This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. We also thank the following helpful implementtaions on [histogram](https://github.com/valerystrizh/pytorch-histogram-loss), [proxynca](https://github.com/dichotomies/proxy-nca), [n-pair and angular](https://github.com/leeesangwon/PyTorch-Image-Retrieval), [siamese-triplet](https://github.com/adambielski/siamese-triplet), [clustering](https://github.com/shaoniangu/ClusterLoss-Pytorch-ReID). 
 
 ### License
 This code is released for academic research / non-commercial use only. If you wish to use for commercial purposes, please contact [Shichao Kan](https://kanshichao.github.io) by email kanshichao10281078@126.com.
