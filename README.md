@@ -143,7 +143,7 @@ If you use this method or this code in your research, please cite as:
 
     @inproceedings{TPAMI-Shichao-2020,
     title={Deep Bayesian Metric Learning with Similarity Distribution Adversarial},
-    author={Shichao Kan, Yigang Cen, Yang Li, Mladenovic Vladimir, Zhihai He},
+    author={Shichao Kan, Yigang Cen, Yang Li, Mladenovic Vladimir, and Zhihai He},
     booktitle={},
     pages={},
     year={2020}
