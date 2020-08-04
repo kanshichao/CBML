@@ -67,7 +67,7 @@ def do_train(
                 logger.info(f'Recall@1 at iteration {iteration:06d}: recall@1: {recall_curr[0]:.3f}')
 
         model.train()
-        model.apply(set_bn_eval)
+        #model.apply(set_bn_eval)
 
         data_time = time.time() - end
         iteration = iteration + 1
