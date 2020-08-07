@@ -25,7 +25,7 @@ LOSSES:
     NEG_A: 1.0
     NEG_B: 0.01
     MARGIN: 0.1
-    HYPER_WEIGHT: 0.2
+    HYPER_WEIGHT: 0.5
 
 DATA:
   TRAIN_IMG_SOURCE: resource/datasets/CUB_200_2011/train.txt
