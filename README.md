@@ -27,9 +27,9 @@ Recent methods for deep metric learning has been focusing on designing different
 |Angular Loss| 54.7| 66.3| 76.0| 83.9|
 |BIER| 55.3| 67.2| 76.9| 85.1|
 |A-BIER| 57.5| 68.7| 78.3| 82.6|
-|**Ours DBML-const-BN-Inception**| **62.8** |**73.9** |**83.2** |**89.8** |
-|**Ours DBML-sqrt-BN-Inception**| **63.1** |**74.7** |**83.1** |**89.8** |
-|**Ours DBML-log-BN-Inception**| **63.8** |**74.8** |**83.6** |**90.3** |
+|**Ours DBML-const-GoogleNet**| **62.8** |**73.9** |**83.2** |**89.8** |
+|**Ours DBML-sqrt-GoogleNet**| **63.1** |**74.7** |**83.1** |**89.8** |
+|**Ours DBML-log-GoogleNet**| **63.8** |**74.8** |**83.6** |**90.3** |
 
 * BN-Inception Backbone
 
