@@ -1,6 +1,6 @@
 # Contrastive Bayesian Analysis for Supervised Deep Metric Learning
 
-This code is mainly for reproducing the results reported in our TPAMI submitted paper [Contrastive Bayesian Analysis for Supervised Deep Metric Learning](https://github.com/kanshichao/dbml). Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and transfer unsupervised metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning. **Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and [dbml_loss with log, square root and constant](https://github.com/kanshichao/dbml/blob/master/dbml_benchmark/losses/dbml.py), [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [proxynca_loss](https://github.com/dichotomies/proxy-nca), [npair_loss](http://papers.nips.cc/paper/6199-improved-deep-metric-learning-with-multi-class-n-pair-loss-objective), [angular_loss](https://arxiv.org/pdf/1708.01682.pdf), [contrastive_loss](http://papers.nips.cc/paper/5416-deep-learning-face-representation-by-joint-identification-verification), [triplet_loss](https://arxiv.org/pdf/1703.07737.pdf), [cluster_loss](https://arxiv.org/pdf/1812.10325.pdf), [histogram_loss](https://arxiv.org/pdf/1611.00822.pdf), [center_loss](https://ydwen.github.io/papers/WenECCV16.pdf) and multiple losses.**
+This code is mainly for reproducing the results reported in our TPAMI submitted paper [Contrastive Bayesian Analysis for Supervised Deep Metric Learning](https://github.com/kanshichao/dbml). Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and transfer unsupervised metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning. **Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and [cbml_loss with log, square root and constant](https://github.com/kanshichao/dbml/blob/master/dbml_benchmark/losses/dbml.py), [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [proxynca_loss](https://github.com/dichotomies/proxy-nca), [npair_loss](http://papers.nips.cc/paper/6199-improved-deep-metric-learning-with-multi-class-n-pair-loss-objective), [angular_loss](https://arxiv.org/pdf/1708.01682.pdf), [contrastive_loss](http://papers.nips.cc/paper/5416-deep-learning-face-representation-by-joint-identification-verification), [triplet_loss](https://arxiv.org/pdf/1703.07737.pdf), [cluster_loss](https://arxiv.org/pdf/1812.10325.pdf), [histogram_loss](https://arxiv.org/pdf/1611.00822.pdf), [center_loss](https://ydwen.github.io/papers/WenECCV16.pdf) and multiple losses.**
 
 <img src="img/distribution.png" width="100%" height="65%"> 
 
@@ -27,9 +27,9 @@ Recent methods for deep metric learning has been focusing on designing different
 |Angular Loss| 54.7| 66.3| 76.0| 83.9|
 |BIER| 55.3| 67.2| 76.9| 85.1|
 |A-BIER| 57.5| 68.7| 78.3| 82.6|
-|**Ours DBML-const-GoogleNet**| **62.8** |**73.9** |**83.2** |**89.8** |
-|**Ours DBML-sqrt-GoogleNet**| **63.1** |**74.7** |**83.1** |**89.8** |
-|**Ours DBML-log-GoogleNet**| **63.8** |**74.8** |**83.6** |**90.3** |
+|**Ours CBML-const-GoogleNet**| **62.8** |**73.9** |**83.2** |**89.8** |
+|**Ours CBML-sqrt-GoogleNet**| **63.1** |**74.7** |**83.1** |**89.8** |
+|**Ours CBML-log-GoogleNet**| **63.8** |**74.8** |**83.6** |**90.3** |
 
 * BN-Inception Backbone
 
@@ -41,9 +41,9 @@ Recent methods for deep metric learning has been focusing on designing different
 |DeML | 65.4 | 75.3 | 83.7 | 89.5 |
 |MS | 65.7| 77.0| 86.3| 91.2|
 |Contrastive+HORDE |66.8 |77.4 |85.1 |91.0 |
-|**Ours DBML-const-BN-Inception**| **68.3** |**78.5** |**86.9** |**92.1** |
-|**Ours DBML-sqrt-BN-Inception**| **69.5** |**79.5** |**86.7** |**91.8** |
-|**Ours DBML-log-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
+|**Ours CBML-const-BN-Inception**| **68.3** |**78.5** |**86.9** |**92.1** |
+|**Ours CBML-sqrt-BN-Inception**| **69.5** |**79.5** |**86.7** |**91.8** |
+|**Ours CBML-log-BN-Inception**| **69.5** |**79.4** |**87.0** |**92.4** |
 
 * ResNet50 Backbone
 
@@ -52,9 +52,9 @@ Recent methods for deep metric learning has been focusing on designing different
 |Devide-Conquer| 65.9| 76.6| 84.4| 90.6|
 |MIC+Margin| 66.1| 76.8| 85.6| -|
 |TML| 62.5| 73.9| 83.0| 89.4|
-|**Ours DBML-const-ResNet50**|**69.2** |**79.3** |**86.3**|**91.6** |
-|**Ours DBML-sqrt-ResNet50**|**70.0** |**79.9** |**87.0**|**92.0** |
-|**Ours DBML-log-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
+|**Ours CBML-const-ResNet50**|**69.2** |**79.3** |**86.3**|**91.6** |
+|**Ours CBML-sqrt-ResNet50**|**70.0** |**79.9** |**87.0**|**92.0** |
+|**Ours CBML-log-ResNet50**|**69.9** |**80.4** |**87.2**|**92.5** |
 
 ### Performance compared with SOTA methods on CUB-200-2011 for 64 dimensional embeddings
 * ResNet50 Backbone
@@ -65,9 +65,9 @@ Recent methods for deep metric learning has been focusing on designing different
  |ProxyNCA| 55.5 | 67.7 | 78.2 | 86.2 |
  |EPSHN| 57.3| 68.9| 79.3| 87.2|
  |MS| 57.4| 69.8| 80.0| 87.8|
- |***Ours DBML-const-ResNet50***|**65.0**|**76.2**|**84.9**|**90.6**|
- |***Ours DBML-sqrt-ResNet50***|**65.0**|**76.0**|**84.1**|**90.3**|
- |***Ours DBML-log-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
+ |***Ours CBML-const-ResNet50***|**65.0**|**76.2**|**84.9**|**90.6**|
+ |***Ours CBML-sqrt-ResNet50***|**65.0**|**76.0**|**84.1**|**90.3**|
+ |***Ours CBML-log-ResNet50***|**64.3**|**75.7**|**84.1**|**90.1**|
  
  * ResNet18 Backbone
  
@@ -76,9 +76,9 @@ Recent methods for deep metric learning has been focusing on designing different
  |N-Pair|52.4|65.7|76.8|84.6|
  |ProxyNCA|51.5|63.8|74.6|84.0|
  |EPSHN|54.2|66.6|77.4|86.0|
- |***Ours DBML-const-ResNet18***|**58.0**|**69.6**|**80.0**|**87.5**|
- |***Ours DBML-sqrt-ResNet18***|**59.4**|**70.5**|**80.4**|**88.0**|
- |***Ours DBML-log-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
+ |***Ours CBML-const-ResNet18***|**58.0**|**69.6**|**80.0**|**87.5**|
+ |***Ours CBML-sqrt-ResNet18***|**59.4**|**70.5**|**80.4**|**88.0**|
+ |***Ours CBML-log-ResNet18***|**61.3**|**72.6**|**81.9**|**88.7**|
  
  * GoogleNet Backbone
  
@@ -88,10 +88,10 @@ Recent methods for deep metric learning has been focusing on designing different
  |N-Pair|45.4|58.4|69.5|79.5|
  |ProxyNCA|49.2|61.9|67.9|72.4|
  |EPSHN|51.7|64.1|75.3|83.9|
- |***Ours DBML-const-GoogleNet***|**56.8**|**69.5**|**79.5**|**87.9**|
- |***Ours DBML-sqrt-GoogleNet***|**57.7**|**69.7**|**80.5**|**88.3**|
- |***Ours DBML-log-GoogleNet***|**59.3**|**70.7**|**80.6**|**88.1**|
-
+ |***Ours CBML-const-GoogleNet***|**56.8**|**69.5**|**79.5**|**87.9**|
+ |***Ours CBML-sqrt-GoogleNet***|**57.7**|**69.7**|**80.5**|**88.3**|
+ |***Ours CBML-log-GoogleNet***|**59.3**|**70.7**|**80.6**|**88.1**|
+ 
 ### Prepare the data and the pretrained model 
 
 The following script will prepare the [CUB](http://www.vision.caltech.edu.s3-us-west-2.amazonaws.com/visipedia-data/CUB-200-2011/CUB_200_2011.tgz) dataset for training by downloading to the ./resource/datasets/ folder; which will then build the data list (train.txt test.txt):
