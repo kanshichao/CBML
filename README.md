@@ -110,21 +110,21 @@ To reproduce the results of our paper. Download the imagenet pretrained model of
 sudo pip3 install -r requirements.txt
 sudo python3 setup.py develop build
 ```
-###  Train and Test on CUB-200-2011 with DBML-Loss based on the BN-Inception backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the BN-Inception backbone
 
 ```bash
 ./scripts/run_cub_bninception.sh
 ```
 Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
 
-###  Train and Test on CUB-200-2011 with DBML-Loss based on the ResNet50 backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the ResNet50 backbone
 
 ```bash
 ./scripts/run_cub_resnet50.sh
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-###  Train and Test on CUB-200-2011 with DBML-Loss based on the GoogleNet backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the GoogleNet backbone
 
 ```bash
 ./scripts/run_cub_googlenet.sh
