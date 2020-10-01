@@ -2,14 +2,14 @@
 import argparse
 import torch
 
-from dbml_benchmark.config import cfg
-from dbml_benchmark.data import build_data
-from dbml_benchmark.engine.trainer import do_train, do_test
-from dbml_benchmark.losses import build_loss,build_aux_loss
-from dbml_benchmark.modeling import build_model
-from dbml_benchmark.solver import build_lr_scheduler, build_optimizer
-from dbml_benchmark.utils.logger import setup_logger
-from dbml_benchmark.utils.checkpoint import Checkpointer
+from cbml_benchmark.config import cfg
+from cbml_benchmark.data import build_data
+from cbml_benchmark.engine.trainer import do_train, do_test
+from cbml_benchmark.losses import build_loss,build_aux_loss
+from cbml_benchmark.modeling import build_model
+from cbml_benchmark.solver import build_lr_scheduler, build_optimizer
+from cbml_benchmark.utils.logger import setup_logger
+from cbml_benchmark.utils.checkpoint import Checkpointer
 
 
 def train(cfg):

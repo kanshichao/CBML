@@ -14,7 +14,7 @@ SOLVER:
   WEIGHT_DECAY: 0.0005
 
 LOSSES:
-  DBML_LOSS:
+  CBML_LOSS:
     POS_A: 0.5
     POS_B: 0.5
     NEG_A: 1.0

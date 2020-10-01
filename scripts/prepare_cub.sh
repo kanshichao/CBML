@@ -15,6 +15,6 @@ if [[ ! -d "${CUB_ROOT}" ]]; then
 fi
 # Generate train.txt and test.txt splits
 echo "Generating the train.txt/test.txt split files"
-python3 scripts/split_cub_for_dbml_loss.py
+python3 scripts/split_cub_for_cbml_loss.py
 
 

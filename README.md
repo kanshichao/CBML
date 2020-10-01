@@ -1,6 +1,6 @@
 # Contrastive Bayesian Analysis for Supervised Deep Metric Learning
 
-This code is mainly for reproducing the results reported in our TPAMI submitted paper [Contrastive Bayesian Analysis for Supervised Deep Metric Learning](https://github.com/kanshichao/dbml). Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and unsupervised metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning. **Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and [cbml_loss(dbml_loss in this code) with log, square root and constant](https://github.com/kanshichao/dbml/blob/master/dbml_benchmark/losses/dbml.py), [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [proxynca_loss](https://github.com/dichotomies/proxy-nca), [npair_loss](http://papers.nips.cc/paper/6199-improved-deep-metric-learning-with-multi-class-n-pair-loss-objective), [angular_loss](https://arxiv.org/pdf/1708.01682.pdf), [contrastive_loss](http://papers.nips.cc/paper/5416-deep-learning-face-representation-by-joint-identification-verification), [triplet_loss](https://arxiv.org/pdf/1703.07737.pdf), [cluster_loss](https://arxiv.org/pdf/1812.10325.pdf), [histogram_loss](https://arxiv.org/pdf/1611.00822.pdf), [center_loss](https://ydwen.github.io/papers/WenECCV16.pdf) and multiple losses.**
+This code is mainly for reproducing the results reported in our TPAMI submitted paper [Contrastive Bayesian Analysis for Supervised Deep Metric Learning](https://github.com/kanshichao/dbml). Beyound for this purpose, we will continue to maintain this project and provide tools for both supervised and unsupervised metric learning research. Aiming to integrate various loss functions and backbones to facilitate academic research progress on deep metric learning. **Now, this project contains GoogleNet, BN-Inception, ResNet18, ResNet34, ResNet50, ResNet101 and ResNet152 backbones, and [cbml_loss with log, square root and constant](https://github.com/kanshichao/dbml/blob/master/dbml_benchmark/losses/dbml.py), [crossentropy_loss](https://en.wikipedia.org/wiki/Cross_entropy), [ms_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Multi-Similarity_Loss_With_General_Pair_Weighting_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [rank_loss](http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Ranked_List_Loss_for_Deep_Metric_Learning_CVPR_2019_paper.pdf), [softtriple_loss](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf), [margin_loss](http://openaccess.thecvf.com/content_ICCV_2017/papers/Wu_Sampling_Matters_in_ICCV_2017_paper.pdf), [adv_loss](https://arxiv.org/abs/1801.04815), [proxynca_loss](https://github.com/dichotomies/proxy-nca), [npair_loss](http://papers.nips.cc/paper/6199-improved-deep-metric-learning-with-multi-class-n-pair-loss-objective), [angular_loss](https://arxiv.org/pdf/1708.01682.pdf), [contrastive_loss](http://papers.nips.cc/paper/5416-deep-learning-face-representation-by-joint-identification-verification), [triplet_loss](https://arxiv.org/pdf/1703.07737.pdf), [cluster_loss](https://arxiv.org/pdf/1812.10325.pdf), [histogram_loss](https://arxiv.org/pdf/1611.00822.pdf), [center_loss](https://ydwen.github.io/papers/WenECCV16.pdf) and multiple losses.**
 
 <img src="img/distribution.png" width="100%" height="65%"> 
 
@@ -110,21 +110,21 @@ To reproduce the results of our paper. Download the imagenet pretrained model of
 sudo pip3 install -r requirements.txt
 sudo python3 setup.py develop build
 ```
-###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the BN-Inception backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss based on the BN-Inception backbone
 
 ```bash
 ./scripts/run_cub_bninception.sh
 ```
 Trained models will be saved in the ./output-bninception-cub/ folder if using the default config.
 
-###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the ResNet50 backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss based on the ResNet50 backbone
 
 ```bash
 ./scripts/run_cub_resnet50.sh
 ```
 Trained models will be saved in the ./output-resnet50-cub/ folder if using the default config.
 
-###  Train and Test on CUB-200-2011 with CBML-Loss (DBML-Loss) based on the GoogleNet backbone
+###  Train and Test on CUB-200-2011 with CBML-Loss based on the GoogleNet backbone
 
 ```bash
 ./scripts/run_cub_googlenet.sh
