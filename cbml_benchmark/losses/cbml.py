@@ -39,8 +39,8 @@ class CBMLLoss(nn.Module):
                 continue
 
             # mean_ = torch.mean(sim_mat[i])
-            # mean_ = self.hyper_weight * torch.mean(pos_pair_) + (1 - self.hyper_weight) * torch.mean(neg_pair_)
-            mean_ = (1.-self.hyper_weight)*torch.mean(sim_mat[i]) + self.hyper_weight*(torch.min(pos_pair_) + torch.max(neg_pair_)) / 2.
+            mean_ = self.hyper_weight * torch.mean(pos_pair_) + (1 - self.hyper_weight) * torch.mean(neg_pair_)
+            # mean_ = (1.-self.hyper_weight)*torch.mean(sim_mat[i]) + self.hyper_weight*(torch.min(pos_pair_) + torch.max(neg_pair_)) / 2.
             # sigma_ = torch.mean(torch.sum(torch.pow(sim_mat[i]-mean_,2)))
             sigma_ = torch.mean(torch.sum(torch.pow(neg_pair_-mean_,2)))
 
