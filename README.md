@@ -19,10 +19,6 @@ Recent methods for deep metric learning has been focusing on designing different
 |LiftedStruct | 47.2 | 58.9 | 70.2 | 80.2 |
 |Binomial Deviance | 52.8 | 64.4 | 74.7 | 83.9 |
 |Histogram Loss| 50.3| 61.9| 72.6| 82.3|
-|N-Pair-Loss | 51.0| 63.3| 74.3| 83.2|
-|Clustering |48.2 |61.4 |71.8 |81.9 |
-|Proxy NCA| 49.2| 61.9| 67.9| 72.4|
-|Smart Mining| 49.8| 62.3| 74.1| 83.3|
 |HDC| 53.6| 65.7| 77.0| 85.6|
 |Angular Loss| 54.7| 66.3| 76.0| 83.9|
 |BIER| 55.3| 67.2| 76.9| 85.1|
