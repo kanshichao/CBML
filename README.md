@@ -135,12 +135,12 @@ Code will be released in other times.
 
 If you use this method or this code in your research, please cite as:
 
-    @inproceedings{Shichao-2020,
+    @inproceedings{Shichao-2022,
     title={Contrastive Bayesian Analysis for Deep Metric Learning},
-    author={Shichao Kan, Yigang Cen, Yang Li, Mladenovic Vladimir, and Zhihai He},
-    booktitle={},
+    author={Shichao Kan, Zhiquan He, Yigang Cen, Yang Li, Mladenovic Vladimir, and Zhihai He},
+    booktitle={IEEE Transactions on Pattern Analysis and Machine Intelligence},
     pages={},
-    year={2020}
+    year={2022}
     }
 
 ### Acknowledgments
