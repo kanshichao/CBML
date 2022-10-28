@@ -151,4 +151,4 @@ This code is released for academic research / non-commercial use only. If you wi
 
 ### Recommended Papers About Deep Metric Learning
 * Michael Opitz, Georg Waltner, Horst Possegger, Horst Bischof: [Deep Metric Learning with BIER: Boosting Independent Embeddings Robustly.](https://arxiv.org/abs/1801.04815) IEEE Trans. Pattern Anal. Mach. Intell. 42(2): 276-290 (2020)
-* Junnan Li, Pan Zhou, Caiming Xiong, Richard Socher, Steven C. H. Hoi: [Prototypical Contrastive Learning of Unsupervised Representations.](https://arxiv.org/abs/2005.04966) arXiv abs/2005.04966 (2020)
+* Kim, S., Kim, D., Cho, M., & Kwak, S. (2022). [Self-Taught Metric Learning without Labels.](https://openaccess.thecvf.com/content/CVPR2022/html/Kim_Self-Taught_Metric_Learning_Without_Labels_CVPR_2022_paper.html) In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 7431-7441). (2020)
