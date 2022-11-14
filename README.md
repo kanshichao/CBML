@@ -147,7 +147,7 @@ If you use this method or this code in your research, please cite as:
 This code is written based on the framework of [MS-Loss](https://github.com/MalongTech/research-ms-loss), we are really grateful to the authors of the MS paper to release their code for academic research / non-commercial use. We also thank the following helpful implementtaions on [histogram](https://github.com/valerystrizh/pytorch-histogram-loss), [proxynca](https://github.com/dichotomies/proxy-nca), [n-pair and angular](https://github.com/leeesangwon/PyTorch-Image-Retrieval), [siamese-triplet](https://github.com/adambielski/siamese-triplet), [clustering](https://github.com/shaoniangu/ClusterLoss-Pytorch-ReID). 
 
 ### License
-This code is released for academic research / non-commercial use only. If you wish to use for commercial purposes, please contact [Shichao Kan](https://kanshichao.github.io) by email kanshichao10281078@126.com.
+This code is released for academic research / non-commercial use only. If you wish to use for commercial purposes, please contact [Shichao Kan](https://faculty.csu.edu.cn/kanshichao/zh_CN/index.htm) by email kanshichao10281078@126.com.
 
 ### Recommended Papers About Deep Metric Learning
 * Michael Opitz, Georg Waltner, Horst Possegger, Horst Bischof: [Deep Metric Learning with BIER: Boosting Independent Embeddings Robustly.](https://arxiv.org/abs/1801.04815) IEEE Trans. Pattern Anal. Mach. Intell. 42(2): 276-290 (2020)
